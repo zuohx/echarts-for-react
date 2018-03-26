@@ -13,6 +13,10 @@ export default class EchartsReactCore extends Component {
 
   // first add
   componentDidMount() {
+    // 延迟resize，解决图标超出容器的问题
+    setTimeout(() => {
+      this.getEchartsInstance().resize();
+    }, 50)
     this.rerender();
   }
 
